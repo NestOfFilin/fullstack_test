@@ -6,22 +6,20 @@ import kursimerlion.fullstack_test_backend.entity.tree.Tree;
 import kursimerlion.fullstack_test_backend.entity.db.worker.GetWorker;
 import kursimerlion.fullstack_test_backend.entity.db.worker.PostWorker;
 
-import java.util.List;
-import java.util.UUID;
 
 public interface WorkersService {
 
-    List<GetWorker> findAll();
+    Integer getPageCount(Integer pageSize);
 
     Page<GetWorker> getPage(WorkerPageRequest pageRequest);
 
-    Tree<GetWorker> getTreeLevel(UUID id);
+    Tree<GetWorker> getTreeLevel(Object id);
 
     GetWorker findById(Object id);
 
-    void create(PostWorker product);
+    void create(PostWorker worker);
 
-    void update(PostWorker product);
+    void update(PostWorker worker);
 
     void delete(Object id);
 }

@@ -15,5 +15,5 @@ import java.util.List;
 public class Page<T> {
 
     private List<Node<T>> pageBody;
-    private Integer countPages;
+    //private Integer countPages;
 }

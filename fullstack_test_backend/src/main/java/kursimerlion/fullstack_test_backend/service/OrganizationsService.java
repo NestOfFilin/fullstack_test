@@ -11,6 +11,8 @@ import java.util.UUID;
 
 public interface OrganizationsService {
 
+    Integer getPageCount(Integer pageSize);
+
     Page<GetOrganization> getPage(OrganizationPageRequest pageRequest);
 
     Tree<GetOrganization> getTreeLevel(Object id);

@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -24,9 +23,14 @@ public class OrganizationsController {
         this.organizationsService = organizationsService;
     }
 
+    @GetMapping("/pageCount")
+    public Integer getPageCount(@RequestBody Integer pageSize) {
+        return organizationsService.getPageCount(pageSize);
+    }
+
     @GetMapping
     public Page<GetOrganization> getPage(@RequestBody OrganizationPageRequest pageRequest) {
-        return null;
+        return organizationsService.getPage(pageRequest);
     }
 
     @GetMapping("/tree")
@@ -35,7 +39,7 @@ public class OrganizationsController {
     }
 
     @GetMapping("/{id}")
-    public GetOrganization findById(@PathVariable UUID id) {
+    public GetOrganization findById(@PathVariable Object id) {
         return organizationsService.findById(id);
     }
 

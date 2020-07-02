@@ -8,6 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 public class GetWorker extends Worker {
+
+    private String managerName, organizationName;
 }

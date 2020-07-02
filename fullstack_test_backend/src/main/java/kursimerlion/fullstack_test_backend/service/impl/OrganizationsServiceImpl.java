@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import ru.psu.pro_it_test.tables.Organizations;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -33,9 +32,58 @@ public class OrganizationsServiceImpl implements OrganizationsService {
     }
 
     @Override
+    public Integer getPageCount(Integer pageSize) {
+
+        Integer orgCount = dsl.selectCount().from(ORGANIZATIONS).fetchAny().value1();
+        return (orgCount < pageSize) ? 1
+                : (orgCount % pageSize == 0) ? orgCount / pageSize
+                : orgCount / pageSize + 1;
+    }
+
+    @Override
     public Page<GetOrganization> getPage(OrganizationPageRequest pageRequest) {
 
-        return null;
+        Organizations o = ORGANIZATIONS.as("o"), c = ORGANIZATIONS.as("c");
+
+        Table<?> withWorkerCount = dsl.select(o.ID, o.NAME, o.ID_PARENT_ORG, count().as("count_worker"))
+                .from(o)
+                .rightJoin(WORKERS).on(o.ID.eq(WORKERS.ID_ORG))
+                .groupBy(o.ID).asTable("with_worker_count");
+        Table<?> withChildCount = dsl.select(o.ID, o.NAME, o.ID_PARENT_ORG, count().as("child_count"))
+                .from(o)
+                .rightJoin(c).on(o.ID.eq(c.ID_PARENT_ORG))
+                .groupBy(o.ID).asTable("with_child_count");
+
+        Table<?> withChildWorker = dsl.select(
+                    withWorkerCount.field(0, UUID.class).as("c_id"),
+                    withWorkerCount.field(1, String.class).as("c_name"),
+                    withWorkerCount.field(2, UUID.class).as("c_p_org"),
+                    withWorkerCount.field("count_worker", Integer.class),
+                    withChildCount.field("child_count", Integer.class))
+                .from(withWorkerCount)
+                .fullJoin(withChildCount).on(withWorkerCount.field(0, UUID.class).eq(withChildCount.field(0, UUID.class)))
+                .where(withWorkerCount.field(0).isNotNull())
+                .union(dsl.select(o.ID, o.NAME, o.ID_PARENT_ORG, inline(0), inline(0)).from(o)).asTable("with_c_w");
+
+        SelectLimitPercentAfterOffsetStep<Record4<UUID, String, BigDecimal, BigDecimal>> limitStep = dsl.select(
+                    withChildWorker.field(0, UUID.class).as("c_id"),
+                    withChildWorker.field(1, String.class).as("c_name"),
+                    sum(withChildWorker.field("count_worker", Integer.class)),
+                    sum(withChildWorker.field("child_count", Integer.class)))
+                .from(withChildWorker)
+                .groupBy(withChildWorker.field(0), withChildWorker.field(1))
+                .offset(pageRequest.getPageSize() * (pageRequest.getPageNumber() - 1))
+                .limit(pageRequest.getPageSize());
+
+        return new Page<>(limitStep.fetch()
+                .map(res -> {
+                    GetOrganization organization = new GetOrganization();
+                    organization.setId(res.get(res.field1(), UUID.class));
+                    organization.setName(res.get(res.field2(), String.class));
+                    organization.setWorkersCount(res.get(res.field3(), Integer.class));
+                    Boolean flagLeaf = res.get(res.field4(), Integer.class) > 0;
+                    return new Node<>(organization, flagLeaf);
+                }));
     }
 
     /*
@@ -94,20 +142,20 @@ public class OrganizationsServiceImpl implements OrganizationsService {
                 .from(withChildWorker);
 
         SelectConditionStep<Record4<UUID, String, BigDecimal, BigDecimal>> conditionStep = (Objects.equals((String)id, "root"))
-                ? joinStep.where()
+                ? joinStep.where(withChildWorker.field(2, UUID.class).isNull())
                 : joinStep.where(withChildWorker.field(2, UUID.class).eq(UUID.fromString((String)id)));
 
         SelectHavingStep<Record4<UUID, String, BigDecimal, BigDecimal>> havingStep =
                 conditionStep.groupBy(withChildWorker.field(0), withChildWorker.field(1));
 
-        return new Tree<>(conditionStep.fetch()
+        return new Tree<>(havingStep.fetch()
                 .map(res -> {
                     GetOrganization organization = new GetOrganization();
                     organization.setId(res.get(res.field1(), UUID.class));
                     organization.setName(res.get(res.field2(), String.class));
                     organization.setWorkersCount(res.get(res.field3(), Integer.class));
                     Boolean flagLeaf = res.get(res.field4(), Integer.class) > 0;
-                    return new Node<GetOrganization>(organization, flagLeaf);
+                    return new Node<>(organization, flagLeaf);
                 }));
     }
 

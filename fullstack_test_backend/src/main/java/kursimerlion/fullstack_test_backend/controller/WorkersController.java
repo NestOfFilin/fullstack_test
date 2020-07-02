@@ -10,9 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.UUID;
-
 @RestController
 @RequestMapping("api/workers")
 public class WorkersController {
@@ -24,18 +21,23 @@ public class WorkersController {
         this.workersService = workersService;
     }
 
+    @GetMapping("/pageCount")
+    public Integer getPageCount(@RequestBody Integer pageSize) {
+        return workersService.getPageCount(pageSize);
+    }
+
     @GetMapping
     public Page<GetWorker> getPage(@RequestBody WorkerPageRequest pageRequest) {
-        return null;
+        return workersService.getPage(pageRequest);
     }
 
     @GetMapping("/tree")
-    public Tree<GetWorker> getTreeLevel(@RequestBody UUID id) {
-        return null;
+    public Tree<GetWorker> getTreeLevel(@RequestBody Object id) {
+        return workersService.getTreeLevel(id);
     }
 
     @GetMapping("/{id}")
-    public GetWorker findById(@PathVariable UUID id) {
+    public GetWorker findById(@PathVariable Object id) {
         return workersService.findById(id);
     }
 
