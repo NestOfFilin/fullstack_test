@@ -4,16 +4,17 @@
     <list default="true" id="6b30db07-2399-424c-a2c9-96a528748c01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/controller/OrganizationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/controller/OrganizationsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/controller/WorkersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/controller/WorkersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/entity/db/organization/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/entity/db/organization/Organization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/entity/db/worker/GetWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/entity/db/worker/GetWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/entity/db/worker/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/entity/db/worker/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/entity/page_request/OrganizationPageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/entity/page_request/OrganizationPageRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/entity/paging/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/entity/paging/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/service/OrganizationsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/service/OrganizationsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/service/WorkersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/service/WorkersService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/service/impl/OrganizationsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/service/impl/OrganizationsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/service/impl/WorkersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack_test_backend/src/main/java/kursimerlion/fullstack_test_backend/service/impl/WorkersServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -36,7 +44,9 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1e31Mx4OyIQNOsy8R8c5TNdLICb" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -47,13 +57,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.1" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/pro-it-test-front-routers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fullstack_test_backend" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="sshConsole" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Filin\Study\SpecKursi_Merlion\fullstack_test\fullstask_test_frontend\src\component" />
+      <recent name="C:\Users\Filin\Study\SpecKursi_Merlion\fullstack_test\fullstask_test_frontend\src\context\alert" />
+      <recent name="C:\Users\Filin\Study\SpecKursi_Merlion\fullstack_test\fullstask_test_frontend\src" />
       <recent name="C:\Users\Filin\Study\SpecKursi_Merlion\fullstack_test\fullstack_test_frontend" />
     </key>
   </component>
@@ -71,7 +84,9 @@
       <workItem from="1593536732939" duration="151000" />
       <workItem from="1593536904149" duration="6000" />
       <workItem from="1593537078406" duration="5289000" />
-      <workItem from="1593662827326" duration="1133000" />
+      <workItem from="1593662827326" duration="66362000" />
+      <workItem from="1593968663251" duration="118000" />
+      <workItem from="1594115737495" duration="19979000" />
     </task>
     <servers />
   </component>
@@ -79,25 +94,53 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1593663370455">
+    <state x="0" y="71" key="#Inspections" timestamp="1593710116376">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593663370455" />
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom" timestamp="1593541878959">
+    <state x="0" y="71" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1593710116376" />
+    <state x="148" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593757520285">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593541878959" />
-    <state width="1491" height="209" key="GridCell.Tab.0.center" timestamp="1593541878958">
+    <state x="148" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1593757520285" />
+    <state x="115" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593669297939">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593541878958" />
-    <state width="1491" height="209" key="GridCell.Tab.0.left" timestamp="1593541878958">
+    <state x="115" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1593669297939" />
+    <state x="750" y="182" key="FileChooserDialogImpl" timestamp="1594115841352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593541878958" />
-    <state width="1491" height="209" key="GridCell.Tab.0.right" timestamp="1593541878959">
+    <state x="750" y="182" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594115841352" />
+    <state width="724" height="211" key="GridCell.Tab.0.bottom" timestamp="1593702466434">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1491" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593541878959" />
+    <state width="724" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593702466434" />
+    <state width="724" height="211" key="GridCell.Tab.0.center" timestamp="1593702466434">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="724" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593702466434" />
+    <state width="724" height="211" key="GridCell.Tab.0.left" timestamp="1593702466433">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="724" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593702466433" />
+    <state width="724" height="211" key="GridCell.Tab.0.right" timestamp="1593702466434">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="724" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593702466434" />
+    <state x="0" y="155" key="IDE.errors.dialog" timestamp="1593724834703">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="155" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1593724834703" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1593968686130">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1593968686130" />
+    <state x="209" y="137" key="new project wizard" timestamp="1593968793434">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="137" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1593968793434" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1594137075205">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1594137075205" />
   </component>
 </project>

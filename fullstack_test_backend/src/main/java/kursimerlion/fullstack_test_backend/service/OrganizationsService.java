@@ -5,6 +5,7 @@ import kursimerlion.fullstack_test_backend.entity.db.organization.PostOrganizati
 import kursimerlion.fullstack_test_backend.entity.page_request.OrganizationPageRequest;
 import kursimerlion.fullstack_test_backend.entity.paging.Page;
 import kursimerlion.fullstack_test_backend.entity.tree.Tree;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,7 +14,7 @@ public interface OrganizationsService {
 
     Integer getPageCount(Integer pageSize);
 
-    Page<GetOrganization> getPage(OrganizationPageRequest pageRequest);
+    Page<GetOrganization> getPage(Integer pageSize, Integer pageNumber);
 
     Tree<GetOrganization> getTreeLevel(Object id);
 

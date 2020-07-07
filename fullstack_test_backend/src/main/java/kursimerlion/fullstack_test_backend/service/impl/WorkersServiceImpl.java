@@ -58,7 +58,7 @@ public class WorkersServiceImpl implements WorkersService {
         group by w_id, w_name, w_manager, w.name, w_id_org, o.name
     */
     @Override
-    public Page<GetWorker> getPage(WorkerPageRequest pageRequest) {
+    public Page<GetWorker> getPage(Integer pageSize, Integer pageNumber) {
 
         Workers w = WORKERS.as("w");
         Organizations o = ORGANIZATIONS.as("o");
@@ -82,8 +82,8 @@ public class WorkersServiceImpl implements WorkersService {
                 .leftJoin(o).on(w_c.field(3, UUID.class).eq(o.ID))
                 .groupBy(w_c.field(0, UUID.class), w_c.field(1, String.class),
                         w.NAME, o.NAME)
-                .offset(pageRequest.getPageSize() * (pageRequest.getPageNumber() - 1))
-                .limit(pageRequest.getPageSize());
+                .offset(pageSize * (pageNumber - 1))
+                .limit(pageSize);
 
         return new Page<>(limitStep.fetch()
                 .map(res -> {
@@ -152,7 +152,7 @@ public class WorkersServiceImpl implements WorkersService {
         while (true) {
             try {
                 worker.setId(UUID.randomUUID());
-                dsl.insertInto(ORGANIZATIONS)
+                dsl.insertInto(WORKERS)
                         .set(WORKERS.ID, worker.getId())
                         .set(WORKERS.NAME, worker.getName())
                         .set(WORKERS.ID_MANAGER, worker.getIdManager())

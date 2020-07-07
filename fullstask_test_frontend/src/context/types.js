@@ -1,0 +1,23 @@
+export const SHOW_ALERT = 'SHOW_ALERT';
+export const HIDE_ALERT = 'HIDE_ALERT';
+
+
+export const SHOW_LOADER = 'SHOW_LOADER';
+export const HIDE_LOADER = 'HIDE_LOADER';
+
+
+export const FETCH_COUNT_PAGES_ORG = 'FETCH_COUNT_PAGES_ORG';
+export const FETCH_PAGE_ORG = 'FETCH_PAGE_ORG';
+export const SET_PAGE_ORG = 'SET_PAGE_ORG';
+export const FETCH_TREE_LVL_ORG = 'FETCH_TREE_LVL_ORG';
+export const ADD_ORG = 'ADD_ORG';
+export const CHANGE_ORG = 'CHANGE_ORG';
+export const DELETE_ORG = 'DELETE_ORG';
+
+export const FETCH_COUNT_PAGES_WORKER = 'FETCH_COUNT_PAGES_WORKER';
+export const FETCH_PAGE_WORKER = 'FETCH_PAGE_WORKER';
+export const SET_PAGE_WORKER = 'SET_PAGE_WORKER';
+export const FETCH_TREE_LVL_WORKER = 'FETCH_TREE_LVL_WORKER';
+export const ADD_WORKER = 'ADD_WORKER';
+export const CHANGE_WORKER = 'CHANGE_WORKER';
+export const DELETE_WORKER = 'DELETE_WORKER';

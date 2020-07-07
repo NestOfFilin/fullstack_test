@@ -41,7 +41,7 @@ public class OrganizationsServiceImpl implements OrganizationsService {
     }
 
     @Override
-    public Page<GetOrganization> getPage(OrganizationPageRequest pageRequest) {
+    public Page<GetOrganization> getPage(Integer pageSize, Integer pageNumber) {
 
         Organizations o = ORGANIZATIONS.as("o"), c = ORGANIZATIONS.as("c");
 
@@ -72,8 +72,8 @@ public class OrganizationsServiceImpl implements OrganizationsService {
                     sum(withChildWorker.field("child_count", Integer.class)))
                 .from(withChildWorker)
                 .groupBy(withChildWorker.field(0), withChildWorker.field(1))
-                .offset(pageRequest.getPageSize() * (pageRequest.getPageNumber() - 1))
-                .limit(pageRequest.getPageSize());
+                .offset(pageSize * (pageNumber - 1))
+                .limit(pageSize);
 
         return new Page<>(limitStep.fetch()
                 .map(res -> {

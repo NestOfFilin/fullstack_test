@@ -11,7 +11,7 @@ public interface WorkersService {
 
     Integer getPageCount(Integer pageSize);
 
-    Page<GetWorker> getPage(WorkerPageRequest pageRequest);
+    Page<GetWorker> getPage(Integer pageSize, Integer pageNumber);
 
     Tree<GetWorker> getTreeLevel(Object id);
 

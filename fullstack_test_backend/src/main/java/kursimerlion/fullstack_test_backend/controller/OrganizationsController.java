@@ -14,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("api/organizations")
+@CrossOrigin(origins = "http://localhost:3000")
 public class OrganizationsController {
 
     private OrganizationsService organizationsService;
@@ -24,17 +25,17 @@ public class OrganizationsController {
     }
 
     @GetMapping("/pageCount")
-    public Integer getPageCount(@RequestBody Integer pageSize) {
+    public Integer getPageCount(@RequestParam Integer pageSize) {
         return organizationsService.getPageCount(pageSize);
     }
 
     @GetMapping
-    public Page<GetOrganization> getPage(@RequestBody OrganizationPageRequest pageRequest) {
-        return organizationsService.getPage(pageRequest);
+    public Page<GetOrganization> getPage(@RequestParam Integer pageSize, @RequestParam Integer pageNumber) {
+        return organizationsService.getPage(pageSize, pageNumber);
     }
 
     @GetMapping("/tree")
-    public Tree<GetOrganization> getTreeLevel(@RequestBody Object id) {
+    public Tree<GetOrganization> getTreeLevel(@RequestParam Object id) {
         return organizationsService.getTreeLevel(id);
     }
 

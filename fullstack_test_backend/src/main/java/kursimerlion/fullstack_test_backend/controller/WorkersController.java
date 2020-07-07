@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/workers")
+@CrossOrigin(origins = "http://localhost:3000")
 public class WorkersController {
 
     private WorkersService workersService;
@@ -22,17 +23,17 @@ public class WorkersController {
     }
 
     @GetMapping("/pageCount")
-    public Integer getPageCount(@RequestBody Integer pageSize) {
+    public Integer getPageCount(@RequestParam Integer pageSize) {
         return workersService.getPageCount(pageSize);
     }
 
     @GetMapping
-    public Page<GetWorker> getPage(@RequestBody WorkerPageRequest pageRequest) {
-        return workersService.getPage(pageRequest);
+    public Page<GetWorker> getPage(@RequestParam Integer pageSize, @RequestParam Integer pageNumber) {
+        return workersService.getPage(pageSize, pageNumber);
     }
 
     @GetMapping("/tree")
-    public Tree<GetWorker> getTreeLevel(@RequestBody Object id) {
+    public Tree<GetWorker> getTreeLevel(@RequestParam Object id) {
         return workersService.getTreeLevel(id);
     }
 
